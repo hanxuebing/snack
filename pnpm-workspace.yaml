@@ -1,2 +1,4 @@
 packages:
   - "packages/*"
+  - "docs" # 组件库文档
+  - "apps/*" # 应用
