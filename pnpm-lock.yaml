@@ -49,19 +49,6 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10
 
-  packages/ui:
-    dependencies:
-      vue:
-        specifier: ^3.3.11
-        version: 3.4.0
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.5.2
-        version: 4.6.0(vite@5.0.10)(vue@3.4.0)
-      vite:
-        specifier: ^5.0.10
-        version: 5.0.10
-
   packages/utils: {}
 
 packages:
