@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "storybook": "turbo storybook",
+    "build-storybook": "turbo build-storybook"
   },
   "keywords": [],
   "author": "",
