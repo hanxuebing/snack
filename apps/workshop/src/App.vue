@@ -1,7 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-// https://blog.csdn.net/qq_42739199/article/details/123966059
 </script>
 
 <template>

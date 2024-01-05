@@ -12,11 +12,6 @@ export default {
 
 export const LoggedOut = {};
 
-function delay(delayTime) {
-  return new Promise(resolve => {
-    setTimeout(resolve, delayTime);
-  });
-}
 // More on interaction testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const LoggedIn = {
   render: () => ({
@@ -29,7 +24,6 @@ export const LoggedIn = {
     const canvas = within(canvasElement);
     const loginButton = canvas.getByRole('button', { name: /Log in/i });
     await expect(loginButton).toBeInTheDocument();
-    await delay(2000);
     await userEvent.click(loginButton);
     await expect(loginButton).not.toBeInTheDocument();
 
