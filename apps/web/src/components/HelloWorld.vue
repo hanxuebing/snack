@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted } from 'vue'
-import test from '@h/utils'
 defineProps({
   msg: {
     type: String,
@@ -8,13 +7,14 @@ defineProps({
   }
 })
 onMounted(() => {
-  test()
+  // debugger
 })
 
 </script>
 
 <template>
   <div class="greetings">
+    <cyberpunk-button></cyberpunk-button>
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
