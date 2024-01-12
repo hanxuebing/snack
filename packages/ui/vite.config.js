@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    sourcemap: true,
     rollupOptions: {
       // 将vue模块排除在打包文件之外，使用用这个组件库的项目的vue模块
       external: ['vue'],
