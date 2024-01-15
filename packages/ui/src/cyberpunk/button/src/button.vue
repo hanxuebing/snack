@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 defineOptions({
-  name: 'CyberpunkButton',
+  name: 'CpButton',
 })
 
 onMounted(() => {

@@ -5,9 +5,11 @@
   "module": "es",
   "type": "module",
   "files": [
-    "es", "lib"
+    "es",
+    "lib"
   ],
   "scripts": {
+    "build-watch": "vite build --watch",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
