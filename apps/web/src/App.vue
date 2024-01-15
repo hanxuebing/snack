@@ -5,9 +5,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <cyberpunk-button></cyberpunk-button>
-
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <!-- <cp-button></cp-button> -->
+    <cp-input></cp-input>
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -16,10 +16,10 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-    </div>
+    </div> -->
   </header>
 
-  <RouterView />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
