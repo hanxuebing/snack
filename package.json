@@ -2,10 +2,15 @@
   "name": "snack",
   "private": true,
   "version": "0.1.0",
-  "description": "snack，一个对c开发的工具合集，不提供过于精细的设置，但是提供开箱即用的功能，目前仅涵盖动画和公共方法",
+  "description": "snack，一个toB开发的工具合集，不提供过于精细的设置，但是提供开箱即用的功能，目前仅涵盖动画和公共方法",
   "packageManager": "pnpm@8.13.1",
   "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
+    "play": "pnpm dev --filter ./apps/web",
     "dev": "turbo dev",
     "build": "turbo build",
     "preinstall": "npx only-allow pnpm",
@@ -17,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "pinia": "^2.1.7",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5",
-    "pinia": "^2.1.7"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
@@ -27,11 +32,12 @@
     "@vue/eslint-config-prettier": "^8.0.0",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
+    "nodemon": "^3.0.2",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
+    "sass": "^1.69.7",
     "turbo": "^1.11.2",
-    "vite": "^5.0.10",
-    "sass": "^1.69.7"
+    "vite": "^5.0.10"
   },
   "engines": {
     "node": ">= 16"

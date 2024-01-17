@@ -12,7 +12,7 @@ onMounted(() => {
 <template>
 <div class="editor-field editor-field__textbox">
   <div class="editor-field__label-container">
-    <label class="editor-field__label">11asd111123</label>
+    <label class="editor-field__label">123</label>
   </div>
 
   <div class="editor-field__container">

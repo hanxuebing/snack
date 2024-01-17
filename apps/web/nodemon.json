@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "watch": ["../../packages/ui/es"],
+  "exec": "vite",
+  "delay": 1000
+}

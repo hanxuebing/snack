@@ -2,5 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import snack from '@snack/ui'
 
-createApp(App).mount('#app')
+const app = createApp(App).mount('#app')
+app.use(snack)
