@@ -16,15 +16,15 @@ const myPlugin = () => ({
 })
 // https://vitejs.dev/config/
 export default defineConfig({
-  optimizeDeps: {
-    exclude: ['@snack/ui']
-  },
+  // optimizeDeps: {
+  //   exclude: ['@snack/ui']
+  // },
   plugins: [
     vue(), myPlugin()
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@snack/ui': fileURLToPath(new URL('../../packages/ui/src', import.meta.url))
     }
   }
 })
