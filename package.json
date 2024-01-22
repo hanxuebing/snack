@@ -10,9 +10,10 @@
     "apps/*"
   ],
   "scripts": {
-    "play": "pnpm dev --filter ./apps/web",
+    "play": "turbo dev --filter=web",
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:ui": "turbo build --filter=@snack/ui",
     "preinstall": "npx only-allow pnpm",
     "storybook": "turbo storybook",
     "build-storybook": "turbo build-storybook",

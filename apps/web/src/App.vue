@@ -1,6 +1,13 @@
 <script setup>
+import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { getHeroName } from '@/api/hero'
+
+onMounted(async() => {
+  const result = await getHeroName()
+  console.log(result.data)
+})
 </script>
 
 <template>
