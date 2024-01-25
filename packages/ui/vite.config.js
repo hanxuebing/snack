@@ -5,10 +5,11 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    sourcemap: true,
+    // sourcemap: true,
     rollupOptions: {
       // 将vue模块排除在打包文件之外，使用用这个组件库的项目的vue模块
-      external: ['vue'],
+      external: ['vue', /\.scss/],
+      input: ['src/index.js'],
       output: [
         {
           // 打包成 es module
@@ -43,5 +44,23 @@ export default defineConfig({
          name: 'H_UI'
     }
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      name: 'style',
+      generateBundle(config, bundle) {
+          //这里可以获取打包后的文件目录以及代码code
+          const keys = Object.keys(bundle)
+          for (const key of keys) {
+              const bundler = bundle[key]
+              //rollup内置方法,将所有输出文件code中的.less换成.css,因为我们当时没有打包less文件
+              this.emitFile({
+                  type: 'asset',
+                  fileName: key,//文件名名不变
+                  source: bundler.code.replace(/\.scss/g, '.css')
+              })
+          }
+      }
+    }
+  ],
 })

@@ -10,12 +10,17 @@
     "lib"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build & pnpm run buildStyle",
     "build-watch": "vite build --watch",
+    "buildScss": "node ./build/buildScss.js",
+    "buildStyle": "pnpm run buildScss",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "cpy": "^11.0.0",
+    "fast-glob": "^3.3.2",
+    "sass": "^1.69.7",
     "vue": "^3.3.11"
   },
   "peerDependencies": {
