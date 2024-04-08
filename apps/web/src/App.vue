@@ -5,15 +5,13 @@ import { onMounted } from 'vue'
 import { getHeroName } from '@/api/hero'
 
 onMounted(async() => {
-  const result = await getHeroName()
-  console.log(result.data)
+  // const result = await getHeroName()
+  // console.log(result.data)
 })
 </script>
 
 <template>
   <header>
-    <cp-button></cp-button>
-    <cp-input></cp-input>
     <!-- <cp-button></cp-button> -->
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -26,7 +24,8 @@ onMounted(async() => {
       </nav>
     </div> -->
   </header>
-
+    <cp-button></cp-button>
+    <cp-input></cp-input>
   <!-- <RouterView /> -->
 </template>
 
