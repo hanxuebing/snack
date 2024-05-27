@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@snack/ui": "workspace:*",
+    "@snack/vue3lib": "workspace:*",
     "axios": "^1.6.5",
     "element-plus": "^2.5.2",
     "js-cookie": "^3.0.5",

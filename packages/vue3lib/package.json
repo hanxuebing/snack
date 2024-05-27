@@ -1,14 +1,19 @@
 {
-  "name": "vue3lib",
+  "name": "@snack/vue3lib",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+
+  "module": "src/index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@snack/utils": "workspace:*",
+    "element-plus": "^2.5.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {

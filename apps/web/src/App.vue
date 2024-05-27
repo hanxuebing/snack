@@ -24,6 +24,7 @@ onMounted(async() => {
       </nav>
     </div> -->
   </header>
+    <file-upload></file-upload>
     <cp-button></cp-button>
     <cp-input></cp-input>
   <!-- <RouterView /> -->

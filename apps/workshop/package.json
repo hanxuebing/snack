@@ -9,6 +9,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@snack/vue3lib": "workspace:*",
     "@snack/ui": "workspace:*",
     "vue": "^3.3.11"
   },

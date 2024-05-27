@@ -1,5 +1,2 @@
-const test = function() {
-  window.alert('asd')
-}
-
-export default test
+export * from './vue3install'
+// export default test
