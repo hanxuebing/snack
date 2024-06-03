@@ -1,9 +1,10 @@
 <script setup>
+import '@snack/vue3lib/dist/index.css'
 import { onMounted } from 'vue'
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 import { getHeroName } from '@/api/hero'
-
+import { BundleCalendar } from '@snack/vue3lib'
 onMounted(async() => {
   // const result = await getHeroName()
   // console.log(result.data)
@@ -24,6 +25,9 @@ onMounted(async() => {
       </nav>
     </div> -->
   </header>
+    <div class="calendar-bg">
+      <BundleCalendar></BundleCalendar>
+    </div>
     <file-upload></file-upload>
     <cp-button></cp-button>
     <cp-input></cp-input>
@@ -31,6 +35,11 @@ onMounted(async() => {
 </template>
 
 <style scoped>
+.calendar-bg {
+  width: 368px;
+  background-color: #11151ecc;
+  backdrop-filter: blur(2.5px);
+}
 header {
   line-height: 1.5;
   max-height: 100vh;

@@ -1,6 +1,12 @@
 <script setup>
+import './style.scss'
 import period from './period.vue'
 import CalendarPanel from './panel.vue'
+
+defineOptions({
+  name: 'test-calendar',
+})
+
 const emit = defineEmits(['onSelectPeriod', 'onCalendarChange', 'onSelectDateRange'])
 
 const props = defineProps({
@@ -44,6 +50,7 @@ provide('rootAttr', {
   </div>
 </template>
 <style lang="scss" scoped>
+@import "@/components/calendar/style.scss";
 .calendar-container {
   width: 100%;
   padding: 12px 0 12px 16px;
