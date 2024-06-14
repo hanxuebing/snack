@@ -53,7 +53,7 @@ export default defineConfig({
           const keys = Object.keys(bundle)
           for (const key of keys) {
               const bundler = bundle[key]
-              //rollup内置方法,将所有输出文件code中的.less换成.css,因为我们当时没有打包less文件
+              //rollup内置方法,将所有输出文件code中的.scss换成.css,因为我们当时没有打包less文件
               this.emitFile({
                   type: 'asset',
                   fileName: key,//文件名名不变
