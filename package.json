@@ -16,7 +16,8 @@
     "build:ui": "turbo build --filter=@snack/ui",
     "preinstall": "npx only-allow pnpm",
     "storybook": "turbo storybook",
-    "build-storybook": "turbo build-storybook",
+    "build:storybook": "turbo build-storybook",
+    "build:vue3lib": "turbo build --filter=vue3lib",
     "clear-Node-modules": "node scripts/ClearNodeModules.js"
   },
   "keywords": [],

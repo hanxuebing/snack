@@ -2,13 +2,20 @@
   "name": "@snack/vue3lib",
   "private": true,
   "version": "0.0.0",
+  "main": "lib",
+  "module": "es",
   "type": "module",
-  "module": "dist/index.es.js",
-  "main": "dist/index.umd.js",
+  "files": [
+    "package.json",
+    "es",
+    "lib"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "vite build & pnpm run buildStyle",
+    "buildStyle": "pnpm run build:scss",
+    "build:scss": "buildScss"
   },
   "dependencies": {
     "@snack/utils": "workspace:*",

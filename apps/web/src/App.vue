@@ -1,10 +1,10 @@
 <script setup>
-import '@snack/vue3lib/dist/index.css'
+import '@snack/vue3lib/dist/style.css'
 import { onMounted } from 'vue'
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 import { getHeroName } from '@/api/hero'
-import { BundleCalendar } from '@snack/vue3lib'
+import { BundleCalendar, BundleFileUpload as fileUpload } from '@snack/vue3lib'
 onMounted(async() => {
   // const result = await getHeroName()
   // console.log(result.data)

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=(t,o=null)=>{if(t.install=e=>{for(const l of[t,...Object.values(o??{})])e.component(l.name,l)},o)for(const[e,l]of Object.entries(o))t[e]=l;return t},s=(t=[])=>({install:e=>{console.log(t),t.forEach(l=>e.use(l))}});exports.makeInstaller=s;exports.withInstall=n;

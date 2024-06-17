@@ -165,7 +165,17 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10(@types/node@20.10.6)(sass@1.69.7)
 
-  packages/utils: {}
+  packages/utils:
+    dependencies:
+      cpy:
+        specifier: ^11.0.0
+        version: 11.0.0
+      fast-glob:
+        specifier: ^3.3.2
+        version: 3.3.2
+      sass:
+        specifier: ^1.69.7
+        version: 1.69.7
 
   packages/vue3lib:
     dependencies:
@@ -5103,8 +5113,8 @@ packages:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
 
-  vue-component-type-helpers@2.0.19:
-    resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
+  vue-component-type-helpers@2.0.21:
+    resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
 
   vue-demi@0.14.6:
     resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
@@ -7394,7 +7404,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.27(typescript@5.3.3)
-      vue-component-type-helpers: 2.0.19
+      vue-component-type-helpers: 2.0.21
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -10699,7 +10709,7 @@ snapshots:
 
   void-elements@3.1.0: {}
 
-  vue-component-type-helpers@2.0.19: {}
+  vue-component-type-helpers@2.0.21: {}
 
   vue-demi@0.14.6(vue@3.4.27(typescript@5.3.3)):
     dependencies:

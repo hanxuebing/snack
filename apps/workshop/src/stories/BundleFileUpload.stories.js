@@ -1,4 +1,5 @@
 import { BundleFileUpload } from '@snack/vue3lib'
+import '@snack/vue3lib/dist/style.css'
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
   title: 'JINTONG/Test/文件上传',

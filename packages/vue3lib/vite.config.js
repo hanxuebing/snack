@@ -14,7 +14,23 @@ export default defineConfig({
         enabled: true
       },
       dts: false
-    })
+    }),
+    {
+      name: 'style',
+      generateBundle(config, bundle) {
+          //这里可以获取打包后的文件目录以及代码code
+          const keys = Object.keys(bundle)
+          for (const key of keys) {
+              const bundler = bundle[key]
+              //rollup内置方法,将所有输出文件code中的.scss换成.css,因为我们当时没有打包scss文件
+              this.emitFile({
+                  type: 'asset',
+                  fileName: key,//文件名名不变
+                  source: bundler.code.replace(/\.scss/g, '.css')
+              })
+          }
+      }
+    }
   ],
   resolve: {
     alias: {
@@ -25,19 +41,40 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.js'),
+      entry: 'src/index.js',
+      // entry: path.resolve(__dirname, 'src/index.js'),
       name: 'BundleUI',
-      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
       // 打包排除基础库
-      external: ['vue', 'element-plus'],
-      output: {
-        globals: {
-          vue: 'Vue',
-          'element-plus': 'ElementPlus'
-        }
-      }
-    }
+      external: ['vue', /\.scss/, /\.less/],
+      input: ['src/index.js'],
+      output: [
+        {
+          // 打包成 es module
+          format: 'es',
+          // 重命名
+          entryFileNames: '[name].js',
+          // 打包目录和开发目录对应
+          preserveModules: true,
+          // 输出目录
+          dir: 'es',
+          // 指定保留模块结构的根目录
+          preserveModulesRoot: 'src',
+        },
+        {
+          // 打包成 commonjs
+          format: 'cjs',
+          // 重命名
+          entryFileNames: '[name].js',
+          // 打包目录和开发目录对应
+          preserveModules: true,
+          // 输出目录
+          dir: 'lib',
+          // 指定保留模块结构的根目录
+          preserveModulesRoot: 'src',
+        },
+      ]
+    },
   }
 })
