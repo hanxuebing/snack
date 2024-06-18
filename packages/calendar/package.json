@@ -1,0 +1,41 @@
+{
+  "name": "@snack/calendar",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./dist/calendar.umd.cjs",
+  "module": "./dist/calendar.js",
+  "exports": {
+    "./dist/style.css": "./dist/style.css",
+    ".": {
+      "import": "./dist/calendar.js",
+      "require": "./dist/calendar.umd.cjs"
+    }
+  },
+  "type": "module",
+  "files": [
+   "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:all": "vite build & pnpm run buildStyle",
+    "buildStyle": "pnpm run build:scss",
+    "build:scss": "buildScss"
+  },
+  "dependencies": {
+    "@snack/utils": "workspace:*",
+    "dayjs": "^1.11.11",
+    "element-plus": "^2.5.2",
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.7",
+    "unplugin-auto-import": "^0.17.6",
+    "vite": "^5.2.0"
+  }
+}

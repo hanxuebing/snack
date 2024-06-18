@@ -1,0 +1,1 @@
+ pnpm -C apps/workshop add @snack/calendar -S

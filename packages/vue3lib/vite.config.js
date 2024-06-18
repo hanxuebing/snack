@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import AutoImport from "unplugin-auto-import/vite";
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,22 +15,22 @@ export default defineConfig({
       },
       dts: false
     }),
-    {
-      name: 'style',
-      generateBundle(config, bundle) {
-          //这里可以获取打包后的文件目录以及代码code
-          const keys = Object.keys(bundle)
-          for (const key of keys) {
-              const bundler = bundle[key]
-              //rollup内置方法,将所有输出文件code中的.scss换成.css,因为我们当时没有打包scss文件
-              this.emitFile({
-                  type: 'asset',
-                  fileName: key,//文件名名不变
-                  source: bundler.code.replace(/\.scss/g, '.css')
-              })
-          }
-      }
-    }
+    // {
+    //   name: 'style',
+    //   generateBundle(config, bundle) {
+    //       //这里可以获取打包后的文件目录以及代码code
+    //       const keys = Object.keys(bundle)
+    //       for (const key of keys) {
+    //           const bundler = bundle[key]
+    //           //rollup内置方法,将所有输出文件code中的.scss换成.css,因为我们当时没有打包scss文件
+    //           this.emitFile({
+    //               type: 'asset',
+    //               fileName: key,//文件名名不变
+    //               source: bundler.code.replace(/\.scss/g, '.css')
+    //           })
+    //       }
+    //   }
+    // }
   ],
   resolve: {
     alias: {
@@ -41,40 +41,20 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: 'src/index.js',
-      // entry: path.resolve(__dirname, 'src/index.js'),
-      name: 'BundleUI',
+      entry: resolve(__dirname, 'src/index.js'),
+      name: 'MyLib',
+      // the proper extensions will be added
+      fileName: 'my-lib'
     },
     rollupOptions: {
-      // 打包排除基础库
-      external: ['vue', /\.scss/, /\.less/],
-      input: ['src/index.js'],
-      output: [
-        {
-          // 打包成 es module
-          format: 'es',
-          // 重命名
-          entryFileNames: '[name].js',
-          // 打包目录和开发目录对应
-          preserveModules: true,
-          // 输出目录
-          dir: 'es',
-          // 指定保留模块结构的根目录
-          preserveModulesRoot: 'src',
-        },
-        {
-          // 打包成 commonjs
-          format: 'cjs',
-          // 重命名
-          entryFileNames: '[name].js',
-          // 打包目录和开发目录对应
-          preserveModules: true,
-          // 输出目录
-          dir: 'lib',
-          // 指定保留模块结构的根目录
-          preserveModulesRoot: 'src',
-        },
-      ]
-    },
+      // 确保外部化处理那些你不想打包进库的依赖
+      external: ['vue'],
+      output: {
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          vue: 'Vue'
+        }
+      }
+    }
   }
 })

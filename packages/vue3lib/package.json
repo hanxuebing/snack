@@ -2,18 +2,24 @@
   "name": "@snack/vue3lib",
   "private": true,
   "version": "0.0.0",
-  "main": "lib",
-  "module": "es",
+  "main": "./dist/my-lib.umd.cjs",
+  "module": "./dist/my-lib.js",
+  "exports": {
+    "./dist/style.css": "./dist/style.css",
+    ".": {
+      "import": "./dist/my-lib.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
+  },
   "type": "module",
   "files": [
-    "package.json",
-    "es",
-    "lib"
+   "dist"
   ],
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build & pnpm run buildStyle",
+    "build": "vite build",
+    "build:all": "vite build & pnpm run buildStyle",
     "buildStyle": "pnpm run build:scss",
     "build:scss": "buildScss"
   },

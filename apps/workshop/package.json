@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@snack/ui": "workspace:*",
-    "@snack/vue3lib": "workspace:*",
+    "@snack/calendar": "workspace:*",
     "vue": "^3.4.27"
   },
   "devDependencies": {

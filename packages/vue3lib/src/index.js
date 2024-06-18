@@ -1,5 +1,4 @@
 import 'element-plus/theme-chalk/base.css'
-import './style/base.scss'
 import { withInstall, makeInstaller } from '@snack/utils'
 
 import BundleFileUpload from './components/upload.vue';
