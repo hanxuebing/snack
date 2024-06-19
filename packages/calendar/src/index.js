@@ -1,5 +1,5 @@
 import './style/index.scss'
-import { withInstall, makeInstaller } from '@snack/utils'
+import { withInstall, makeInstaller } from '@@fries/utils'
 import { packing } from './h_calendar/utility.js';
 import HCalendar from './h_calendar/index.vue';
 import Period from './h_calendar/period.vue';

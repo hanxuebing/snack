@@ -2,7 +2,7 @@
   "name": "snack",
   "private": true,
   "version": "0.1.0",
-  "description": "snack，一个toB开发的工具合集，不提供过于精细的设置，但是提供开箱即用的功能，目前仅涵盖动画和公共方法",
+  "description": "库",
   "packageManager": "pnpm@9.1.2",
   "main": "index.js",
   "workspaces": [
